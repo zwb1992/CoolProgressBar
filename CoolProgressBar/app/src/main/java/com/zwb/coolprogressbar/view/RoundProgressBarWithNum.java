@@ -19,6 +19,7 @@ import com.zwb.coolprogressbar.R;
 public class RoundProgressBarWithNum extends HorizontalProgressBar {
     private int mRadius;
     private int mMaxPaintWidth;
+    private int startAngle = 0;
 
     public RoundProgressBarWithNum(Context context) {
         this(context, null);
@@ -33,6 +34,7 @@ public class RoundProgressBarWithNum extends HorizontalProgressBar {
         TypedArray array = context.getTheme().obtainStyledAttributes(attrs, R.styleable.RoundProgressBarWithNum, defStyleAttr, 0);
         mRadius = (int) array.getDimension(R.styleable.RoundProgressBarWithNum_round_radius,
                 TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, getResources().getDisplayMetrics()));
+        startAngle = array.getInt(R.styleable.RoundProgressBarWithNum_offset_angle, 0);
         array.recycle();
     }
 
@@ -57,14 +59,16 @@ public class RoundProgressBarWithNum extends HorizontalProgressBar {
         String text = getProgress() + "%";
         int textWidth = (int) mTextPaint.measureText(text);
         mReachPaint.setStyle(Paint.Style.STROKE);
+        mReachPaint.setStrokeCap(Paint.Cap.ROUND);
         mUnReachPaint.setStyle(Paint.Style.STROKE);
+        mUnReachPaint.setStrokeCap(Paint.Cap.ROUND);
 
         canvas.save();
         canvas.translate(getPaddingLeft() + mMaxPaintWidth / 2, getPaddingTop() + mMaxPaintWidth / 2);
         canvas.drawCircle(mRadius, mRadius, mRadius, mUnReachPaint);
 
         float sweep = 360 * ratio;
-        canvas.drawArc(new RectF(0, 0, mRadius * 2, mRadius * 2), 0, sweep, false, mReachPaint);
+        canvas.drawArc(new RectF(0, 0, mRadius * 2, mRadius * 2), startAngle, sweep, false, mReachPaint);
 
         int fy = (int) (-mTextPaint.ascent() - mTextPaint.descent()) / 2;
         canvas.drawText(text, mRadius - textWidth / 2, mRadius + fy, mTextPaint);
