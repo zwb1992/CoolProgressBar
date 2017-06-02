@@ -20,4 +20,10 @@
         <attr name="progress_text_color" />
         <attr name="progress_text_size" />
     </declare-styleable>
+
+    <!--圆形进度条的半径-->
+    <attr name="round_radius" format="dimension" />
+    <declare-styleable name="RoundProgressBarWithNum">
+        <attr name="round_radius" />
+    </declare-styleable>
 </resources>

@@ -18,17 +18,17 @@ import com.zwb.coolprogressbar.R;
  */
 
 public class HorizontalProgressBar extends ProgressBar {
-    private int mReachHeight;
-    private int mReachColor;
-    private int mUnReachHeight;
-    private int mUnReachColor;
-    private int mTextColor;
-    private int mTextSize;
-    private int mOffset;
+    protected int mReachHeight;
+    protected int mReachColor;
+    protected int mUnReachHeight;
+    protected int mUnReachColor;
+    protected int mTextColor;
+    protected int mTextSize;
+    protected int mOffset;
 
-    private Paint mTextPaint;
-    private Paint mReachPaint;
-    private Paint mUnReachPaint;
+    protected Paint mTextPaint;
+    protected Paint mReachPaint;
+    protected Paint mUnReachPaint;
 
     public HorizontalProgressBar(Context context) {
         this(context, null);
@@ -107,7 +107,7 @@ public class HorizontalProgressBar extends ProgressBar {
      * @return 返回最终的高
      */
     private int measureHeight(int heightMeasureSpec) {
-        int result = 0;
+        int result;
         int size = MeasureSpec.getSize(heightMeasureSpec);
         int mode = MeasureSpec.getMode(heightMeasureSpec);
         if (mode == MeasureSpec.EXACTLY) {//确定的值

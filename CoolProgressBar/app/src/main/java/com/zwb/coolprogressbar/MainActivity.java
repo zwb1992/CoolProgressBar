@@ -7,15 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.zwb.coolprogressbar.view.HorizontalProgressBar;
+import com.zwb.coolprogressbar.view.RoundProgressBarWithNum;
 
 public class MainActivity extends AppCompatActivity {
     private HorizontalProgressBar hpb;
+    private RoundProgressBarWithNum rpb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hpb = (HorizontalProgressBar) findViewById(R.id.hpb);
+        rpb = (RoundProgressBarWithNum) findViewById(R.id.rpb);
     }
 
     private int progress = 0;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
             int what = msg.what;
             hpb.setProgress(progress);
+            rpb.setProgress(progress);
             if (what < 100) {
                 Message message = Message.obtain();
                 progress++;
