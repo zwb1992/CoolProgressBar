@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="reach_color" format="color" />
+    <!--水平进度条的高度或者环形进度条的宽度-->
+    <attr name="reach_width" format="dimension" />
+    <!--文字与进度之间的间隙-->
+    <attr name="offset" format="dimension" />
+    <attr name="unReach_color" format="color" />
+    <attr name="unReach_width" format="dimension" />
+    <attr name="progress_text_color" format="color" />
+    <attr name="progress_text_size" format="dimension" />
+
+    <declare-styleable name="HorizontalProgressBar">
+        <attr name="reach_color" />
+        <attr name="reach_width" />
+        <!--文字与进度之间的间隙-->
+        <attr name="offset" />
+        <attr name="unReach_color" />
+        <attr name="unReach_width" />
+        <attr name="progress_text_color" />
+        <attr name="progress_text_size" />
+    </declare-styleable>
+</resources>
