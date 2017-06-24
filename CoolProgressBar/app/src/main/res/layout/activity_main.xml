@@ -92,6 +92,14 @@
         zwb:unReach_color="#ffF7C6f7"
         zwb:unReach_width="2dp" />
 
+    <com.zwb.coolprogressbar.view.LinearProgressBar
+        android:id="@+id/lpb"
+        android:layout_width="match_parent"
+        android:background="#ccc"
+        android:layout_height="3dp"
+        zwb:bar_color="#ffF53Bf3"
+        zwb:bar_width="90dp"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -24,9 +24,15 @@
     <!--圆形进度条的半径-->
     <attr name="round_radius" format="dimension" />
     <!--从哪个角度作为起点-->
-    <attr name="offset_angle" format="integer"/>
+    <attr name="offset_angle" format="integer" />
     <declare-styleable name="RoundProgressBarWithNum">
         <attr name="round_radius" />
-        <attr name="offset_angle"/>
+        <attr name="offset_angle" />
+    </declare-styleable>
+
+    <!--线性移动进度条-->
+    <declare-styleable name="LinearProgressBar">
+        <attr name="bar_color" format="color" />
+        <attr name="bar_width" format="dimension" />
     </declare-styleable>
 </resources>
